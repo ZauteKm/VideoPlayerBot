@@ -1,0 +1,90 @@
+{
+    "name": "Telegram Video Stream Bot",
+    "description": "An Telegram Bot By @ZauteKm To Stream Videos in Voice Chat",
+    "repository": "https://github.com/ZauteKm/VideoStreamBot/tree/master",
+    "logo": "https://telegra.ph/file/117de96dbfbfea2ce59a6.png",
+    "stack": "container",
+    "keywords": [
+      "telegram",
+      "voicechat",
+      "bot",
+      "video",
+      "player",
+      "python",
+      "pyrogram",
+      "py-tgcalls",
+      "videoplayer"
+    ],
+    "env": {
+      "API_ID": {
+        "description": "User Accounts Telegram API_ID get it from https://my.telegram.org/apps",
+        "required": true
+      },
+      "API_HASH": {
+        "description": "User Accounts Telegram API_HASH get it from https://my.telegram.org/apps",
+        "required": true
+      },
+      "BOT_TOKEN": {
+        "description": "Your Telegram Bot Token, get it from @BotFather",
+        "required": true
+      },
+      "SESSION_STRING": {
+        "description": "User Accounts Session String, get it from https://replit.com/@ZauteKm/GenerateStringSession",
+        "required": true
+      },
+      "CHAT_ID": {
+        "description": "ID of your Channel or Group where the bot stream Music/YouTube Lives/Live Stream",
+        "required": true
+      },
+      "LOG_GROUP": {
+        "description": "ID of the group to send playlist if CHAT_ID is a Group, if channel then leave blank",
+        "required": false
+      },
+      "AUTH_USERS": {
+        "description": "ID of Auth Users who can use Admin commands (for multiple users seperated by space)",
+        "required": true
+      },
+      "ADMIN_ONLY": {
+        "description": "Change it to 'True' If you want to make /play commands only for admins. By default /play is available for all.",
+        "value": "False",
+        "required": false
+      },
+      "STARTUP_STREAM": {
+        "description": "YouTube live / Direct link of a video to stream when the bot starts (Read the README for more info) ",
+        "value": "https://youtu.be/36YnV9STBqc",
+        "required": false
+      },
+      "REPLY_MESSAGE": {
+        "description": "A reply message to those who message the USER account in PM. Make it blank if you do not need this feature.",
+        "value": "Hello Sir, I'm a bot to stream videos on telegram voice chat, not having time to chat with you 😂!",
+        "required": false
+      },
+      "HEROKU_API_KEY": {
+        "description": "Your Heroku api token. Get it from https://dashboard.heroku.com/account",
+        "required": true
+      },
+      "HEROKU_APP_NAME": {
+        "description": "Name of your Heroku app, given in the first blank on this page if deploying to heroku.",
+        "required": true
+      },
+      "IS_NONSTOP_STREAM": {
+        "description": "Change it to 'False' If you want to disable nonstop 24x7 live stream feature. By default it is enabled.",
+        "value": "True",
+        "required": false
+      }
+    },
+    "formation": {
+      "worker": {
+        "quantity": 1,
+        "size": "free"
+      }
+    },
+    "buildpacks": [
+      {
+        "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+      },
+      {
+        "url": "heroku/python"
+      }
+    ]
+  }
