@@ -37,14 +37,14 @@ async def main():
     if Config.IS_NONSTOP_STREAM:
         await start_stream()
     try:
-        await USER.join_chat("AsmSafone")
+        await USER.join_chat("ZauteKm")
     except UserAlreadyParticipant:
         pass
     except Exception as e:
         print(e)
         pass
     await idle()
-    LOGGER.warning("Video Player Bot Stopped !")
+    LOGGER.warning("Video Stream Bot Stopped !")
     await bot.stop()
 
 if __name__ == '__main__':
