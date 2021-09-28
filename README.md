@@ -38,7 +38,7 @@ An Telegram Bot By [@ZauteKm](https://t.me/ZauteKm) To Stream Videos In Telegram
 1. `API_ID` : User Account Telegram API_ID, get it from https://my.telegram.org
 2. `API_HASH` : User Account Telegram API_HASH, get it from https://my.telegram.org
 3. `BOT_TOKEN` : Your Telegram Bot Token, get it from [@Botfather](https://t.me/botfather) XD
-4. `SESSION_STRING` : Pyrogram Session String of User Account, get it from [![GenerateStringSession](https://img.shields.io/badge/repl.it-genStr-yellowgreen)](https://replit.com/@ZauteKm/GenerateStringSession)
+4. `SESSION_STRING` : Pyrogram Session String of User Account, get it from [![GenerateStringSession](https://img.shields.io/badge/repl.it-GenerateStringSession-yellowgreen)](https://replit.com/@ZauteKm/GenerateStringSession)
 5. `CHAT_ID` : ID of Channel or Group where the bot will stream videos.
 6. `LOG_GROUP` : Group to send Playlist, if CHAT_ID is a Group.
 7. `AUTH_USERS` : ID of Users who can use Admins commands (for multiple users seperated by space).
