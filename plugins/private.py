@@ -69,7 +69,7 @@ async def start(client, message):
             ],
             [
                 InlineKeyboardButton("👥 Support", url="https://t.me/zautebot"),
-                InlineKeyboardButton("Channel 📢", url="https://t.me/TGBotsProJect"),
+                InlineKeyboardButton("Channel 📢", url="https://t.me/tgbotsProject/156"),
             ],
             [
                 InlineKeyboardButton("🤖 Other Bots", url="https://t.me/BotzListBot"),
@@ -92,7 +92,7 @@ async def show_help(client, message):
             ],
             [
                 InlineKeyboardButton("👥 Support", url="https://t.me/zautebot"),
-                InlineKeyboardButton("Channel 📢", url="https://t.me/TGBotsProJect"),
+                InlineKeyboardButton("Channel 📢", url="https://t.me/tgbotsProject/156"),
             ],
             [
                 InlineKeyboardButton("🤖 Other Bots", url="https://t.me/BotzListBot"),
