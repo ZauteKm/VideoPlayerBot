@@ -152,7 +152,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],
             [
                 InlineKeyboardButton("👥 Support", url="https://t.me/zautebot"),
-                InlineKeyboardButton("Channel 📢", url="https://t.me/TGBotsProJect"),
+                InlineKeyboardButton("Channel 📢", url="https://t.me/tgbotsProject/156"),
             ],
             [
                 InlineKeyboardButton("🤖 Other Bots", url="https://t.me/BotzListBot"),
@@ -179,7 +179,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],
             [
                 InlineKeyboardButton("👥 Support", url="https://t.me/zautebot"),
-                InlineKeyboardButton("Channel 📢", url="https://t.me/TGBotsProJect"),
+                InlineKeyboardButton("Channel 📢", url="https://t.me/tgbotsProject/156"),
             ],
             [
                 InlineKeyboardButton("🤖 Other Bots", url="https://t.me/BotzListBot"),
