@@ -151,8 +151,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("Seach YouTube Videos", switch_inline_query_current_chat=""),
             ],
             [
-                InlineKeyboardButton("👥 Support", url="https://t.me/zautebot"),
-                InlineKeyboardButton("Channel 📢", url="https://t.me/tgbotsProject/156"),
+                InlineKeyboardButton("👥 Support", url="https://t.me/InTeRnAtIoNaLUnIQuEFrIeNdSs"),
+                InlineKeyboardButton("Channel 📢", url="https://t.me/INTERNATIONALFRDS"),
             ],
             [
                 InlineKeyboardButton("🤖 Other Bots", url="https://t.me/BotzListBot"),
@@ -178,8 +178,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton("Seach YouTube Videos", switch_inline_query_current_chat=""),
             ],
             [
-                InlineKeyboardButton("👥 Support", url="https://t.me/zautebot"),
-                InlineKeyboardButton("Channel 📢", url="https://t.me/tgbotsProject/156"),
+                InlineKeyboardButton("👥 Support", url="https://t.me/InTeRnAtIoNaLUnIQuEFrIeNdSs"),
+                InlineKeyboardButton("Channel 📢", url="https://t.me/INTERNATIONALFRDS"),
             ],
             [
                 InlineKeyboardButton("🤖 Other Bots", url="https://t.me/BotzListBot"),
