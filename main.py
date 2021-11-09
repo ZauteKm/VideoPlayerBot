@@ -12,41 +12,27 @@
 
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 import os
-import asyncio
-from bot import bot
-from config import Config
-from pyrogram import idle
-from helpers.log import LOGGER
-from helpers.utils import start_stream
-from assets.user import group_call, USER
-from pyrogram.errors import UserAlreadyParticipant
+from plugins.nopm import User
+from pyrogram import Client, idle
+from config import API_ID, API_HASH, BOT_TOKEN
 
-
+Bot = Client(
+    ":memory:",
+    API_ID,
+    API_HASH,
+    bot_token=BOT_TOKEN,
+    plugins=dict(root="plugins"),
+)
 if not os.path.isdir("./downloads"):
     os.makedirs("./downloads")
-else:
-    for f in os.listdir("./downloads"):
-        os.remove(f"./downloads/{f}")
 
-async def main():
-    await bot.start()
-    Config.BOT_USERNAME = (await bot.get_me()).username
-    await group_call.start()
-    LOGGER.warning(f"{Config.BOT_USERNAME} Started Successfully !")
-    if Config.IS_NONSTOP_STREAM:
-        await start_stream()
-    try:
-        await USER.join_chat("ZauteKm")
-    except UserAlreadyParticipant:
-        pass
-    except Exception as e:
-        print(e)
-        pass
-    await idle()
-    LOGGER.warning("Video Stream Bot Stopped !")
-    await bot.stop()
+Bot.start()
+User.start()
+print("\n[INFO] - STARTED VIDEO PLAYER BOT, JOIN @JOSPROJECTS !")
 
-if __name__ == '__main__':
-    asyncio.get_event_loop().run_until_complete(main())
-
+idle()
+Bot.stop()
+User.stop()
+print("\n[INFO] - STOPPED VIDEO PLAYER BOT, JOIN @JOSPROJECTS !")
