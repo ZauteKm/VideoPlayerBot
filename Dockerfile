@@ -19,9 +19,9 @@ COPY requirements.txt /requirements.txt
 # Installing Requirements
 RUN cd /
 RUN pip3 install -U -r requirements.txt
-RUN mkdir /VideoStreamBot
-WORKDIR /VideoStreamBot
+RUN mkdir /VideoPlayerBot
+WORKDIR /VideoPlayerBot
 COPY start.sh /start.sh
 
-# Running Video Stream Bot
+# Running VideoPlayerBot
 CMD ["/bin/bash", "/start.sh"]
