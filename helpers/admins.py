@@ -12,23 +12,28 @@
 
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
-import logging
-from logging.handlers import RotatingFileHandler
 
-logging.basicConfig(
-    level=logging.WARNING,
-    format="[%(asctime)s - %(levelname)s] - %(name)s - %(message)s",
-    datefmt='%d-%b-%y %H:%M:%S',
-    handlers=[
-        RotatingFileHandler(
-            "botlog.txt",
-            maxBytes=50000000,
-            backupCount=10
-        ),
-        logging.StreamHandler()
-    ]
-)
-logging.getLogger("pyrogram").setLevel(logging.WARNING)
-logging.getLogger("pytgcalls").setLevel(logging.WARNING)
+import time
+import assets.admins
+from typing import List
+from assets.admins import set
+from pyrogram.types import Chat
+from assets.admins import get as gett
 
-LOGGER=logging.getLogger(__name__)
+
+async def get_administrators(chat: Chat) -> List[int]:
+    get = gett(chat.id)
+
+    if get:
+        return get
+    else:
+        time.sleep(1)
+        administrators = await chat.get_members(filter="administrators")
+        to_set = []
+
+        for administrator in administrators:
+            if administrator.can_manage_voice_chats:
+                to_set.append(administrator.user.id)
+
+        set(chat.id, to_set)
+        return await get_administrators(chat)
