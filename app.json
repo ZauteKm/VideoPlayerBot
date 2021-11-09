@@ -12,64 +12,47 @@
       "player",
       "python",
       "pyrogram",
-      "py-tgcalls",
+      "pytgcalls",
       "videoplayer"
     ],
     "env": {
       "API_ID": {
-        "description": "User Accounts Telegram API_ID get it from https://my.telegram.org/apps",
+        "description": "User Account Telegram API_ID get it from my.telegram.org/apps",
         "required": true
       },
       "API_HASH": {
-        "description": "User Accounts Telegram API_HASH get it from https://my.telegram.org/apps",
+        "description": "User Account Telegram API_HASH get it from my.telegram.org/apps",
         "required": true
       },
       "BOT_TOKEN": {
-        "description": "Your Telegram Bot Token, get it from @BotFather",
+        "description": "Your Telegram Bot Token, get it from @Botfather XD",
         "required": true
       },
       "SESSION_STRING": {
-        "description": "User Accounts Session String, get it from https://replit.com/@ZauteKm/GenerateStringSession",
+        "description": "Pyrogram Session String of User Account, get it from https://replit.com/@ZauteKm/GenerateStringSession#main.py",
         "required": true
       },
-      "CHAT_ID": {
-        "description": "ID of your Channel or Group where the bot stream Music/YouTube Lives/Live Stream",
+      "SUDO_USERS": {
+        "description": "ID of Sudo Users who can use Admin commands (for multiple users seperated by space)",
         "required": true
       },
-      "LOG_GROUP": {
-        "description": "ID of the group to send playlist if CHAT_ID is a Group, if channel then leave blank",
-        "required": false
-      },
-      "AUTH_USERS": {
-        "description": "ID of Auth Users who can use Admin commands (for multiple users seperated by space)",
+      "ASSISTANT_NAME": {
+        "description": "Your Video Player's assistant Username without @.",
         "required": true
       },
-      "ADMIN_ONLY": {
-        "description": "Change it to 'True' If you want to make /play commands only for admins. By default /play is available for all.",
-        "value": "False",
-        "required": false
-      },
-      "STARTUP_STREAM": {
-        "description": "YouTube live / Direct link of a video to stream when the bot starts (Read the README for more info) ",
-        "value": "https://youtu.be/36YnV9STBqc",
-        "required": false
+      "SUPPORT_GROUP": {
+        "description": "Support Group username without @ [Leave this if you don't have one]",
+        "required": false,
+        "value": "jospsupportbot"
+      },     
+      "UPDATES_CHANNEL": {
+        "description": "Updates Channel username without @ [Leave this if you don't have one].",
+        "required": false,
+        "value": "Josprojects"
       },
       "REPLY_MESSAGE": {
         "description": "A reply message to those who message the USER account in PM. Make it blank if you do not need this feature.",
         "value": "Hello Sir, I'm a bot to stream videos on telegram voice chat, not having time to chat with you 😂!",
-        "required": false
-      },
-      "HEROKU_API_KEY": {
-        "description": "Your Heroku api token. Get it from https://dashboard.heroku.com/account",
-        "required": true
-      },
-      "HEROKU_APP_NAME": {
-        "description": "Name of your Heroku app, given in the first blank on this page if deploying to heroku.",
-        "required": true
-      },
-      "IS_NONSTOP_STREAM": {
-        "description": "Change it to 'False' If you want to disable nonstop 24x7 live stream feature. By default it is enabled.",
-        "value": "True",
         "required": false
       }
     },
