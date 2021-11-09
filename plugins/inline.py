@@ -12,42 +12,33 @@
 
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
-from config import Config
-from helpers.log import LOGGER
+
+import asyncio
+from config import REPLY_MESSAGE
 from pyrogram import Client, errors
-from youtubesearchpython import VideosSearch
 from pyrogram.handlers import InlineQueryHandler
-from pyrogram.types import InlineQueryResultArticle, InlineQueryResultPhoto, InputTextMessageContent, InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineQueryResultArticle, InputTextMessageContent, InlineKeyboardButton, InlineKeyboardMarkup
+from youtubesearchpython import VideosSearch
+
 
 buttons = [
             [
-                InlineKeyboardButton("🚨 Help & Commands 🚨", callback_data="help"),
+                InlineKeyboardButton("Channel", url="https://t.me/Josprojects"),
+                InlineKeyboardButton("Support", url="https://t.me/Jospsupportbot"),
             ],
             [
-                InlineKeyboardButton("👥 Support", url="https://t.me/zautebot"),
-                InlineKeyboardButton("Channel 📢", url="https://t.me/TGBotsProJect"),
-            ],
-            [
-                InlineKeyboardButton("🤖 Deploy your Own Bot 🤖", url="https://heroku.com/deploy?template=https://github.com/ZauteKm/VideoStreamBot/tree/master"),
+                InlineKeyboardButton("🤖 Make your Own Bot 🤖", url="https://heroku.com/deploy?template=https://github.com/ZauteKm/VideoPlayerBot"),
             ]
          ]
-
-def get_cmd(dur):
-    if dur:
-        return "/play"
-    else:
-        return "/stream"
 
 @Client.on_inline_query()
 async def search(client, query):
     answers = []
     if query.query == "ZAUTE_KM":
         answers.append(
-            InlineQueryResultPhoto(
-                title="Deploy Own Video Stream Bot",
-                thumb_url="https://telegra.ph/file/117de96dbfbfea2ce59a6.png",
-                photo_url="https://telegra.ph/file/117de96dbfbfea2ce59a6.png",
-                caption=f"{Config.REPLY_MESSAGE}\n\n<b>© Powered By : \n@ZauteKm | @ZauteBot 🧑‍🔧</b>",
+            InlineQueryResultArticle(
+                title="Deploy Own Video Player Bot",
+                input_message_content=InputTextMessageContent(f"{REPLY_MESSAGE}\n\n<b>© Powered By : \ZauteKm | @JosProjects 👑</b>", disable_web_page_preview=True),
                 reply_markup=InlineKeyboardMarkup(buttons)
                 )
             )
@@ -58,7 +49,7 @@ async def search(client, query):
         await client.answer_inline_query(
             query.id,
             results=answers,
-            switch_pm_text=("Search a YouTube Videos"),
+            switch_pm_text=("✍️ Type An Video Name!"),
             switch_pm_parameter="help",
             cache_time=0
         )
@@ -73,7 +64,9 @@ async def search(client, query):
                         v["viewCount"]["short"]
                     ),
                     input_message_content=InputTextMessageContent(
-                        "{} https://www.youtube.com/watch?v={}".format(get_cmd(v["duration"]), v["id"])
+                        "/stream https://www.youtube.com/watch?v={}".format(
+                            v["id"]
+                        )
                     ),
                     thumb_url=v["thumbnails"][0]["url"]
                 )
@@ -87,7 +80,7 @@ async def search(client, query):
             await query.answer(
                 results=answers,
                 cache_time=0,
-                switch_pm_text=("❌ No Results Found !"),
+                switch_pm_text=("❌ No Results Found!"),
                 switch_pm_parameter="",
             )
 
